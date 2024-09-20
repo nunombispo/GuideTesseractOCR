@@ -2,3 +2,4 @@ pytesseract
 Pillow
 pdf2image
 opencv-python
+llmwhisperer-client
