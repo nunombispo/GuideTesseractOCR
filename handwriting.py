@@ -41,7 +41,7 @@ def preprocess_image(image):
 
 
 # Convert PDF pages to images
-pdf_path = 'office-notes-handwriting.pdf'
+pdf_path = 'Edsger-Dijkstra-Notes-handwriting.pdf'
 pages = convert_from_path(pdf_path, 500)  # 500 is the resolution (dpi)
 
 # Extract text from each page
@@ -58,7 +58,7 @@ for page_number, page_image in enumerate(pages, start=1):
     pil_img = Image.fromarray(processed_image)
 
     # Perform OCR on the page image
-    text = pytesseract.image_to_string(pil_img)
+    text = pytesseract.image_to_string(page_image)
     extracted_text += f"--- Page {page_number} ---\n"
     extracted_text += text + "\n"
 
